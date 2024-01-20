@@ -1,0 +1,13 @@
+[package]
+name = "hello"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "hello"
+crate-type = ["cdylib"]
+
+[profile.release]
+strip = "debuginfo"
+opt-level = "z"
+lto = true

@@ -1,0 +1,17 @@
+{
+  "name": "hello",
+  "command_name": "hello",
+  "version": "0.0.1",
+  "extension_author": "Paradoxis",
+  "original_author": "Paradoxis",
+  "repo_url": "https://github.com/Paradoxis/Sliver-Rust-Extension-Template",
+  "help": "Bare minimum extension template for Sliver, written in Rust.",
+  "entrypoint": "entrypoint",
+  "files": [
+    {
+      "os": "windows",
+      "arch": "amd64",
+      "path": "target/x86_64-pc-windows-gnu/release/hello.dll"
+    }
+  ]
+}
