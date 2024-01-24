@@ -11,7 +11,12 @@
     {
       "os": "windows",
       "arch": "amd64",
-      "path": "target/x86_64-pc-windows-gnu/release/hello.dll"
+      "path": "hello.dll"
+    },
+    {
+      "os": "linux",
+      "arch": "amd64",
+      "path": "hello.so"
     }
   ]
 }
