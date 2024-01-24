@@ -8,7 +8,7 @@ type GoCallback = extern "C" fn(*const c_char, c_int) -> c_int;
 pub extern "C" fn entrypoint(args_buffer: *mut c_char, buffer_size: u32, cb: GoCallback) -> c_int {
     // Parse the arguments
     let args: &str = match std::str::from_utf8(unsafe {
-        std::slice::from_raw_parts(args_buffer as *const u8, size as usize)
+        std::slice::from_raw_parts(args_buffer as *const u8, buffer_size as usize)
     }) {
         Ok(v) => v,
         Err(_) => return 1,
@@ -26,9 +26,9 @@ fn callback(msg: &str, cb: GoCallback) -> c_int {
 
 #[no_mangle]
 pub extern "C" fn DllMain(
-    h_module: *mut c_void,
-    ul_reason_for_call: u32,
-    lp_reserved: *mut c_void,
+    _h_module: *mut c_void,
+    _ul_reason_for_call: u32,
+    _lp_reserved: *mut c_void,
 ) -> bool {
     true
 }
